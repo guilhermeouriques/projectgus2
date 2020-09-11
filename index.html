@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Gusttavo Lima</title>
+	<script src="Build/UnityLoader.js"></script>
+	<script>
+		UnityLoader.instantiate("unityContainer", "Build/ProjectGusMV2.json", {
+			compatibilityCheck: function (unityInstance, onsuccess, onerror) {
+				if (!UnityLoader.SystemInfo.hasWebGL) {
+					unityInstance.popup("Desculpe, mas seu navegador não suporta WebGL.",
+						[{ text: "OK", callback: onerror }]);
+				} else {
+					onsuccess();
+				}
+			}
+		});
+	</script>
+</head>
+
+<body>
+	<div id="unityContainer" style="width: 300px; height: 530px; margin: auto"></div>
+</body>
+
+</html>
